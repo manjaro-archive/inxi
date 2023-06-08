@@ -24,4 +24,4 @@ jobs:
           gpg-key: ${{ secrets.GPG_KEY }}
           gpg-key-sign: ${{ secrets.GPG_SIGN }}
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
-          ssh-key: ${{ secrets.SSH_PACKAGE_CI }}
+
