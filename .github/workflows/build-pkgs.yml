@@ -15,13 +15,13 @@ jobs:
       - uses: Ste74/build-pkgs@main
         with:
           repo-src: "https://gitlab.manjaro.org/packages/community/inxi"
-          gitlab-user: ${{ secrets.gitlab_user }}
-          gitlab-pw: ${{ secrets.gitlab_server_user }}
-          user-mail: ${{ secrets.manjaro_mail }}
-          manjaro-user: ${{ secrets.manjaro_user }}
+          gitlab-user: ${{ secrets.GITLAB_USER }}
+          gitlab-pw: ${{ secrets.GITLB_SERVER_USER}}
+          user-mail: ${{ secrets.MANJARO_MAIL }}
+          manjaro-user: ${{ secrets.MANJARO_USER }}
           build-mirror: ${{ secrets.BUILD_MIRROR }}
           branch: "unstable"
           gpg-key: ${{ secrets.GPG_KEY }}
-          gpg-key-sign: ${{ secrets.GPG_SIGN }}
+          gpg-key-sign: ${{ secrets.GPG_SIGNING_KEY }}
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
