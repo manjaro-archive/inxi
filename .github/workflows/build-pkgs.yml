@@ -6,6 +6,9 @@ on:
 jobs:
   build-pkg:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        BRANCH: [testing, stable]
     steps:
       - name: Set up swap space
         uses: pierotofy/set-swap-space@v1.0
@@ -20,7 +23,7 @@ jobs:
           user-mail: ${{ secrets.MANJARO_MAIL }}
           manjaro-user: ${{ secrets.MANJARO_USER }}
           build-mirror: ${{ secrets.BUILD_MIRROR }}
-          branch: "unstable"
+          branch: ${{ matrix.branch }}
           gpg-key: ${{ secrets.GPG_SIGNING_KEY }}
           gpg-key-sign: ${{ secrets.GPG_SIGN }}
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
